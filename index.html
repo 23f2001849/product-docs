@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Quarterly Earnings Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.0.0/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/chart/chart.js"></script>
+    
+    <style>
+        .reveal {
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+        }
+        .reveal .slides section {
+            text-align: left;
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+            font-weight: 600;
+        }
+        .reveal .title-slide {
+            text-align: center;
+        }
+        .reveal .title-slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .reveal .title-slide .subtitle {
+            font-size: 1.2em;
+            color: #888;
+            margin-bottom: 2em;
+        }
+        .reveal .title-slide .author {
+            font-size: 1em;
+            color: #666;
+        }
+        .fragment.highlight-current-red.current-fragment {
+            color: #ff6b6b;
+        }
+        .reveal .slides section .code-wrapper {
+            font-size: 0.8em;
+        }
+        .reveal .slides section .small-text {
+            font-size: 0.9em;
+        }
+        .reveal .slides section .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2em;
+            margin-top: 2em;
+        }
+        .reveal .slides section .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5em;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+        .reveal .slides section .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+        .reveal .slides section .metric-label {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 0.5em;
+        }
+        .reveal .slides section .chart-container {
+            height: 400px;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section class="title-slide">
+                <h1>Q4 2024 Quarterly Earnings Report</h1>
+                <div class="subtitle">Financial Performance & Strategic Outlook</div>
+                <div class="author">
+                    <p>Technical Consultant</p>
+                    <p><a href="mailto:23f2001849@ds.study.iitm.ac.in">23f2001849@ds.study.iitm.ac.in</a></p>
+                    <p>December 2024</p>
+                </div>
+            </section>
+
+            <!-- Executive Summary -->
+            <section>
+                <h2>Executive Summary</h2>
+                <div class="financial-grid">
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-value">$48.4B</div>
+                        <div class="metric-label">Total Revenue</div>
+                        <div class="small-text">↑ 21% YoY</div>
+                    </div>
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-value">$20.8B</div>
+                        <div class="metric-label">Net Income</div>
+                        <div class="small-text">↑ 49% YoY</div>
+                    </div>
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-value">48%</div>
+                        <div class="metric-label">Operating Margin</div>
+                        <div class="small-text">↑ 7pp YoY</div>
+                    </div>
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-value">$8.02</div>
+                        <div class="metric-label">Diluted EPS</div>
+                        <div class="small-text">↑ 50% YoY</div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Welcome stakeholders to Q4 2024 earnings presentation. Key highlights: Record revenue of $48.4B driven by strong advertising growth and AI investments. Net income surge reflects operational efficiency improvements. Operating margin expansion demonstrates scalability of business model. EPS growth outpaced revenue growth, indicating strong shareholder value creation.</p>
+                </aside>
+            </section>
+
+            <!-- Revenue Performance -->
+            <section>
+                <h2>Revenue Performance</h2>
+                <div class="fragment fade-up">
+                    <h3>Quarterly Revenue Growth</h3>
+                    <div id="revenue-chart" class="chart-container"></div>
+                </div>
+                <div class="fragment fade-up">
+                    <p class="small-text">
+                        <strong>Key Drivers:</strong> Advertising revenue increased 21% YoY to $46.8B, driven by 14% increase in average price per ad and 6% growth in ad impressions. Other revenue grew 55% YoY to $519M, reflecting strong performance in Reality Labs and commerce initiatives.
+                    </p>
+                </div>
+                <aside class="notes">
+                    <p>Revenue momentum continues across all segments. Advertising business showing strong pricing power with 14% increase in average price per ad. This is driven by AI-powered ad targeting improvements and increased advertiser demand. Reality Labs showing accelerated growth with new product launches.</p>
+                </aside>
+            </section>
+
+            <!-- Profitability Analysis -->
+            <section>
+                <h2>Profitability Analysis</h2>
+                <div class="fragment fade-up">
+                    <div class="financial-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">$23.4B</div>
+                            <div class="metric-label">Operating Income</div>
+                            <div class="small-text">↑ 43% YoY</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">18.6%</div>
+                            <div class="metric-label">Return on Equity</div>
+                            <div class="small-text">↑ 72bps QoQ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <h3>Margin Expansion Drivers</h3>
+                    <ul>
+                        <li class="fragment highlight-current-red">Cost discipline: Operating expenses grew only 5% YoY vs 21% revenue growth</li>
+                        <li class="fragment highlight-current-red">Scale benefits: Fixed cost absorption across larger revenue base</li>
+                        <li class="fragment highlight-current-red">AI efficiency: Automated processes reducing operational costs</li>
+                        <li class="fragment highlight-current-red">Revenue mix: Higher-margin advertising products gaining share</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    <p>Profitability metrics showing exceptional improvement. Operating leverage is evident with expense growth significantly trailing revenue growth. AI investments are paying off in operational efficiency. Margin expansion sustainable as we continue to scale.</p>
+                </aside>
+            </section>
+
+            <!-- Financial Formulas -->
+            <section>
+                <h2>Key Financial Metrics</h2>
+                <div class="fragment fade-up">
+                    <h3>Core Performance Ratios</h3>
+                    <div class="math-formulas">
+                        <p>$$\text{Operating Margin} = \frac{\text{Operating Income}}{\text{Revenue}} \times 100$$</p>
+                        <p class="fragment">$$\text{ROE} = \frac{\text{Net Income}}{\text{Shareholders' Equity}} \times 100$$</p>
+                        <p class="fragment">$$\text{EPS} = \frac{\text{Net Income} - \text{Dividends}}{\text{Outstanding Shares}}$$</p>
+                        <p class="fragment">$$\text{Asset Turnover} = \frac{\text{Revenue}}{\text{Total Assets}}$$</p>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <table class="small-text">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Q4 2024</th>
+                                <th>Q4 2023</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment">
+                                <td>Operating Margin</td>
+                                <td>48.0%</td>
+                                <td>41.0%</td>
+                                <td>+7.0pp</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>ROE</td>
+                                <td>18.6%</td>
+                                <td>17.9%</td>
+                                <td>+0.7pp</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>Asset Turnover</td>
+                                <td>0.62</td>
+                                <td>0.59</td>
+                                <td>+5.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside class="notes">
+                    <p>Walking through key financial ratios that demonstrate our strong performance. Operating margin expansion of 7 percentage points shows significant operational leverage. ROE improvement reflects efficient capital utilization. Asset turnover increase indicates better asset productivity.</p>
+                </aside>
+            </section>
+
+            <!-- Code Sample -->
+            <section>
+                <h2>Financial Analysis Code</h2>
+                <div class="fragment fade-up">
+                    <h3>Python: Revenue Growth Analysis</h3>
+                    <pre><code class="python" data-line-numbers="1|2-4|5-7|8-10|11-13">
+import pandas as pd
+import numpy as np
+
+# Q4 2024 Financial Data
+revenue_q4_2024 = 48385  # Million USD
+revenue_q4_2023 = 40111  # Million USD
+net_income_q4_2024 = 20838  # Million USD
+net_income_q4_2023 = 14017  # Million USD
+
+# Calculate growth rates
+revenue_growth = (revenue_q4_2024 - revenue_q4_2023) / revenue_q4_2023 * 100
+net_income_growth = (net_income_q4_2024 - net_income_q4_2023) / net_income_q4_2023 * 100
+
+# Operating margin calculation
+operating_income = 23365  # Million USD
+operating_margin = operating_income / revenue_q4_2024 * 100
+
+print(f"Revenue Growth: {revenue_growth:.1f}%")
+print(f"Net Income Growth: {net_income_growth:.1f}%")
+print(f"Operating Margin: {operating_margin:.1f}%")
+                    </code></pre>
+                </div>
+                <div class="fragment fade-up">
+                    <p class="small-text">
+                        <strong>Output:</strong><br>
+                        Revenue Growth: 20.6%<br>
+                        Net Income Growth: 48.7%<br>
+                        Operating Margin: 48.3%
+                    </p>
+                </div>
+                <aside class="notes">
+                    <p>Here's the actual Python code our data science team uses for financial analysis. This demonstrates our commitment to transparency and data-driven decision making. The code calculates key growth metrics and validates our reported figures.</p>
+                </aside>
+            </section>
+
+            <!-- Market Position -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Market Position & Competitive Landscape
+                    
+                    ### Industry Leadership
+                    - **Market Share**: 23% of global digital advertising market
+                    - **User Base**: 3.35B daily active people across our family of apps
+                    - **Geographic Reach**: Available in 180+ countries
+                    
+                    ### Competitive Advantages
+                    1. **AI-Powered Personalization**: Advanced machine learning algorithms
+                    2. **Scale Economics**: Lowest cost per impression in the industry
+                    3. **Ecosystem Integration**: Seamless cross-platform experience
+                    4. **Data Network Effects**: Improving targeting with scale
+                    
+                    ### Strategic Initiatives
+                    - *Metaverse Development*: $10B+ investment in Reality Labs
+                    - *AI Infrastructure*: Building next-generation computing platforms
+                    - *Creator Economy*: Supporting content creators and businesses
+                </textarea>
+                <aside class="notes">
+                    <p>This markdown slide shows our market leadership position. We maintain 23% global market share despite competitive pressures. Our AI investments are creating sustainable competitive advantages. The metaverse represents our next growth frontier.</p>
+                </aside>
+            </section>
+
+            <!-- Risk Assessment -->
+            <section>
+                <h2>Risk Assessment & Mitigation</h2>
+                <div class="fragment fade-up">
+                    <h3>Key Risk Factors</h3>
+                    <div class="financial-grid">
+                        <div class="metric-card fragment highlight-current-red">
+                            <div class="metric-label">Regulatory Risk</div>
+                            <div class="small-text">Increased scrutiny on data privacy and AI governance</div>
+                        </div>
+                        <div class="metric-card fragment highlight-current-red">
+                            <div class="metric-label">Competition</div>
+                            <div class="small-text">New entrants in AI and social media space</div>
+                        </div>
+                        <div class="metric-card fragment highlight-current-red">
+                            <div class="metric-label">Economic Sensitivity</div>
+                            <div class="small-text">Advertising spend correlation with GDP</div>
+                        </div>
+                        <div class="metric-card fragment highlight-current-red">
+                            <div class="metric-label">Technology Disruption</div>
+                            <div class="small-text">Rapid evolution in AI and VR/AR technologies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <h3>Mitigation Strategies</h3>
+                    <ul>
+                        <li class="fragment">Proactive compliance investments and regulatory engagement</li>
+                        <li class="fragment">Continuous innovation and R&D leadership ($43.9B annual investment)</li>
+                        <li class="fragment">Diversified revenue streams and geographic presence</li>
+                        <li class="fragment">Strong balance sheet with $77.8B in cash and securities</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                    <p>Transparent discussion of key risks facing our business. Regulatory environment remains our primary concern with evolving data privacy laws. We're addressing this through proactive compliance and industry leadership. Our strong balance sheet provides resilience against economic uncertainties.</p>
+                </aside>
+            </section>
+
+            <!-- Q1 2025 Outlook -->
+            <section>
+                <h2>Q1 2025 Outlook</h2>
+                <div class="fragment fade-up">
+                    <div class="financial-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">$46-48B</div>
+                            <div class="metric-label">Revenue Guidance</div>
+                            <div class="small-text">Mid-point: $47B (+13% YoY)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$14-16B</div>
+                            <div class="metric-label">CapEx Guidance</div>
+                            <div class="small-text">Infrastructure & AI investments</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fragment fade-up">
+                    <h3>Key Priorities</h3>
+                    <ul>
+                        <li class="fragment highlight-current-red">AI advancement and integration across all products</li>
+                        <li class="fragment highlight-current-red">Reality Labs product launches and ecosystem development</li>
+                        <li class="fragment highlight-current-red">Advertiser tool enhancements and measurement improvements</li>
+                        <li class="fragment highlight-current-red">Regulatory compliance and transparency initiatives</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-up">
+                    <p class="small-text">
+                        <strong>Note:</strong> Guidance assumes current foreign exchange rates and excludes impact of potential regulatory changes.
+                    </p>
+                </div>
+                <aside class="notes">
+                    <p>Q1 2025 guidance reflects continued momentum with revenue expected to grow 13% year-over-year at the midpoint. Significant CapEx investments in AI infrastructure will drive future growth. Focus remains on execution across our strategic priorities while maintaining operational discipline.</p>
+                </aside>
+            </section>
+
+            <!-- Thank You -->
+            <section class="title-slide">
+                <h1>Thank You</h1>
+                <div class="subtitle">Questions & Discussion</div>
+                <div class="author">
+                    <p>For additional information:</p>
+                    <p><a href="mailto:23f2001849@ds.study.iitm.ac.in">23f2001849@ds.study.iitm.ac.in</a></p>
+                    <p>Investor Relations: <a href="https://investor.metalabs.com">investor.metalabs.com</a></p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            rtl: false,
+            keyboard: true,
+            overview: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
+            chart: {
+                defaults: {
+                    color: ['#4ecdc4', '#ff6b6b', '#45b7d1', '#96ceb4', '#feca57'],
+                    scale: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Initialize charts after Reveal is ready
+        Reveal.addEventListener('ready', function() {
+            // Revenue Chart
+            if (document.getElementById('revenue-chart')) {
+                const revenueChart = echarts.init(document.getElementById('revenue-chart'));
+                const revenueOption = {
+                    title: {
+                        text: 'Quarterly Revenue (Billions USD)',
+                        textStyle: { color: '#fff', fontSize: 16 }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: '{b}: ${c}B'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['Q4 2023', 'Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024'],
+                        axisLabel: { color: '#fff' }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: { 
+                            color: '#fff',
+                            formatter: '${value}B'
+                        }
+                    },
+                    series: [{
+                        data: [40.1, 36.5, 39.1, 40.6, 48.4],
+                        type: 'line',
+                        smooth: true,
+                        lineStyle: { color: '#4ecdc4', width: 3 },
+                        itemStyle: { color: '#4ecdc4' },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0, y: 0, x2: 0, y2: 1,
+                                colorStops: [
+                                    { offset: 0, color: 'rgba(78, 205, 196, 0.3)' },
+                                    { offset: 1, color: 'rgba(78, 205, 196, 0.1)' }
+                                ]
+                            }
+                        }
+                    }]
+                };
+                revenueChart.setOption(revenueOption);
+            }
+        });
+    </script>
+</body>
+</html>
