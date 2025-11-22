@@ -110,7 +110,7 @@ style: |
 <!-- _backgroundImage: url(docs-workspace.png) -->
 <!-- _backgroundColor: rgba(30, 30, 30, 0.8) -->
 
-![bg opacity:0.2](docs-workspace.png)
+![bg](https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80)
 
 ## **Introduction to Software Documentation**
 
