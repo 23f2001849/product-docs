@@ -110,6 +110,8 @@ style: |
 <!-- _backgroundImage: url(docs-workspace.png) -->
 <!-- _backgroundColor: rgba(30, 30, 30, 0.8) -->
 
+![bg opacity:0.2](docs-workspace.png)
+
 ## **Introduction to Software Documentation**
 
 ### **Why Documentation Matters**
